@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+vector <string> a;
+string s;
+int n, m, h;
+void rec(int g) {
+    if((g + n - s.size()) < m);
+    if (s.size() == n) {
+        if(g >= m) {a.push_back(s);}
+    }s.push_back('A');
+    rec(g + 1);
+    s.back() = 'F';
+    rec(g);
+    s.back() = 'I';
+    rec(g + 1);
+    s.back() = 'N';
+    rec(g);
+    s.pop_back();
+}signed main() {
+    cin >> n >> m >> h;
+    rec(0);
+    sort(a.begin(), a.end());
+    h--;
+    if(h < a.size())
+        cout << a.size()<< a[h];;
+}
